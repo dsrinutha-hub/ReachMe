@@ -1,0 +1,819 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f6f8fc;
+    color: #172033;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.app {
+    min-height: 100vh;
+}
+
+.app header {
+    height: 74px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid #e7eaf1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.app header > div {
+    display: flex;
+
+    align-items: center;
+}
+
+.app header strong {
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    color: #171c2d;
+}
+
+.app header span {
+    margin-left: 14px;
+
+    font-size: 13px;
+
+    color: #8991a5;
+
+    padding-left: 14px;
+
+    border-left: 1px solid #e2e5ec;
+}
+
+
+
+
+main {
+    width: min(1400px, 94%);
+
+    margin: auto;
+
+    padding: 32px 0 60px;
+}
+
+
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 240px;
+
+    border-radius: 26px;
+
+    padding: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171b3d 0%,
+            #272b69 45%,
+            #4f46e5 100%
+        );
+
+    box-shadow:
+        0 22px 50px rgba(39, 43, 105, 0.20);
+
+    margin-bottom: 26px;
+}
+
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    right: 150px;
+
+    top: -190px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    right: -80px;
+
+    bottom: -150px;
+}
+
+.hero > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+
+    font-size: clamp(28px, 4vw, 43px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.76);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.gps {
+    min-width: 190px;
+
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.10);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.gps small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: rgba(255,255,255,0.65);
+}
+
+
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(380px, 0.85fr)
+        minmax(500px, 1.15fr);
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+
+.card {
+    background: #ffffff;
+
+    border: 1px solid #e8ebf2;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 30px rgba(30, 42, 70, 0.055);
+}
+
+.card h2 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+
+    letter-spacing: -0.3px;
+}
+
+.card > p {
+    color: #8790a3;
+
+    font-size: 13px;
+}
+
+
+
+
+.form h2 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+.form label {
+    display: block;
+
+    margin: 17px 0;
+
+    color: #3e4658;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+.form input,
+.form textarea {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dfe3ec;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: #172033;
+
+    background: #fbfcfe;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+.form textarea {
+    min-height: 82px;
+
+    resize: vertical;
+}
+
+
+
+.two {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+
+
+
+.form input[type="range"] {
+    padding: 0;
+
+    border: none;
+
+    margin-top: 14px;
+
+    accent-color: #4f46e5;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+
+
+button {
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 11px 17px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s,
+        opacity 0.15s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(79,70,229,0.20);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.secondary {
+    background: #f0f2f7;
+
+    color: #343b4d;
+}
+
+.secondary:hover {
+    background: #e8eaf1;
+
+    box-shadow: none;
+}
+
+.danger {
+    background: #fff0f0;
+
+    color: #c62828;
+}
+
+.danger:hover {
+    background: #ffe4e4;
+
+    box-shadow: none;
+}
+
+
+
+
+.row {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+
+
+.reminder {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 17px;
+
+    margin-top: 12px;
+
+    border: 1px solid #eaecf2;
+
+    border-radius: 15px;
+
+    background: #fcfdff;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.reminder:hover {
+    transform: translateY(-2px);
+
+    border-color: #dfe2eb;
+
+    box-shadow:
+        0 8px 20px rgba(30,42,70,0.06);
+}
+
+.reminder h3 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+    color: #1b2233;
+}
+
+.reminder p {
+    margin: 0 0 8px;
+
+    color: #7d8699;
+
+    font-size: 12px;
+}
+
+.reminder b {
+    display: block;
+
+    color: #4f46e5;
+
+    font-size: 12px;
+}
+
+.reminder small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #9aa2b2;
+
+    font-size: 11px;
+}
+
+.reminder.done {
+    opacity: 0.72;
+
+    background: #f9fbfa;
+}
+
+.actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+}
+
+.actions button {
+    padding: 9px 12px;
+
+    font-size: 11px;
+}
+
+
+
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 11px;
+
+    border-radius: 30px;
+
+    background: #eaf8f0;
+
+    color: #17804c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+
+
+.map-card {
+    padding: 18px;
+
+    position: sticky;
+
+    top: 96px;
+}
+
+.map-card h2 {
+    padding: 4px 5px 14px;
+}
+
+.leaflet-container {
+    width: 100%;
+
+    height: 560px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+
+.notice {
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+
+    background: #fff8dc;
+
+    border: 1px solid #f5e5a6;
+
+    color: #735d10;
+
+    font-size: 13px;
+}
+
+.error {
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    background: #fff0f0;
+
+    border: 1px solid #ffd5d5;
+
+    color: #bd2828;
+
+    font-size: 12px;
+}
+
+.muted {
+    color: #9aa2b2;
+}
+
+
+
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(99,102,241,0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(79,70,229,0.10),
+            transparent 30%
+        ),
+        #f6f8fc;
+}
+
+.auth-card {
+    width: min(420px, 100%);
+
+    padding: 38px;
+
+    background: rgba(255,255,255,0.96);
+
+    border:
+        1px solid #e6e9f1;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(31,41,70,0.10);
+}
+
+.auth-card h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+.auth-card p {
+    color: #8a92a4;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.auth-card input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin: 8px 0;
+
+    border: 1px solid #dfe3ec;
+
+    border-radius: 11px;
+
+    background: #fbfcfe;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.auth-card input:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,0.10);
+}
+
+.auth-card button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px;
+}
+
+.auth-card a {
+    color: #4f46e5;
+
+    font-weight: 700;
+}
+
+
+@media (max-width: 1050px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-card {
+        position: static;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    main {
+        width: 92%;
+
+        padding-top: 20px;
+    }
+
+    .app header {
+        padding: 0 4%;
+    }
+
+    .app header span {
+        display: none;
+    }
+
+    .hero {
+        padding: 28px;
+
+        border-radius: 20px;
+
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .gps {
+        margin-top: 22px;
+
+        width: 100%;
+    }
+
+    .two {
+        grid-template-columns: 1fr;
+    }
+
+    .reminder {
+        display: block;
+    }
+
+    .actions {
+        margin-top: 14px;
+    }
+
+    .map-card {
+        padding: 12px;
+    }
+
+    .leaflet-container {
+        height: 430px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .auth-page {
+        padding: 15px;
+    }
+
+    .auth-card {
+        padding: 26px 20px;
+
+        border-radius: 20px;
+    }
+
+    .card {
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+}
