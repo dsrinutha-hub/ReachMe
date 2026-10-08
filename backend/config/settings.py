@@ -21,16 +21,17 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "corsheaders",
+    
     "rest_framework",
-
+    "corsheaders",
     "reminders",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+   
 
     "django.middleware.security.SecurityMiddleware",
+     "corsheaders.middleware.CorsMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
 
@@ -118,3 +119,8 @@ SIMPLE_JWT = {
 
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
+CORS_ALLOWED_ORIGINS = [
+    "https://reachme-frontend.onrender.com",
+]
+
+CORS_ALLOW_CREDENTIALS = True
