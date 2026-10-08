@@ -3,6 +3,11 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# =========================
+# SECURITY
+# =========================
+
 SECRET_KEY = "reachme-secret-key-change-this"
 
 DEBUG = False
@@ -10,8 +15,13 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    'reachme-3ce8.onrender.com'
+    "reachme-3ce8.onrender.com",
 ]
+
+
+# =========================
+# INSTALLED APPS
+# =========================
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -21,17 +31,20 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    
     "rest_framework",
     "corsheaders",
     "reminders",
 ]
 
-MIDDLEWARE = [
-   
 
+# =========================
+# MIDDLEWARE
+# =========================
+
+MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-     "corsheaders.middleware.CorsMiddleware",
+
+    "corsheaders.middleware.CorsMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
 
@@ -46,7 +59,17 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
+# =========================
+# URL CONFIGURATION
+# =========================
+
 ROOT_URLCONF = "config.urls"
+
+
+# =========================
+# TEMPLATES
+# =========================
 
 TEMPLATES = [
     {
@@ -68,8 +91,17 @@ TEMPLATES = [
     },
 ]
 
+
+# =========================
+# WSGI
+# =========================
+
 WSGI_APPLICATION = "config.wsgi.application"
 
+
+# =========================
+# DATABASE
+# =========================
 
 DATABASES = {
     "default": {
@@ -80,8 +112,16 @@ DATABASES = {
 }
 
 
+# =========================
+# PASSWORD VALIDATION
+# =========================
+
 AUTH_PASSWORD_VALIDATORS = []
 
+
+# =========================
+# INTERNATIONALIZATION
+# =========================
 
 LANGUAGE_CODE = "en-us"
 
@@ -92,16 +132,56 @@ USE_I18N = True
 USE_TZ = True
 
 
+# =========================
+# STATIC FILES
+# =========================
+
 STATIC_URL = "static/"
+
+
+# =========================
+# DEFAULT PRIMARY KEY
+# =========================
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+# =========================
+# CORS
+# =========================
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://reachme-frontend.onrender.com",
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+
+# =========================
+# DJANGO REST FRAMEWORK
+# =========================
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -114,13 +194,12 @@ REST_FRAMEWORK = {
 }
 
 
+# =========================
+# JWT
+# =========================
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=2),
 
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
-CORS_ALLOWED_ORIGINS = [
-    "https://reachme-frontend.onrender.com",
-]
-
-CORS_ALLOW_CREDENTIALS = True
