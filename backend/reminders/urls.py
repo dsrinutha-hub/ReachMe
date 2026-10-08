@@ -8,8 +8,23 @@ from .views import (
     TriggerView,
 )
 
+from django.http import JsonResponse
+
+
+def home(request):
+    return JsonResponse({
+        "message": "ReachMe API is running successfully!",
+        "status": "success"
+    })
+
 
 urlpatterns = [
+
+    path(
+        "",
+        home,
+        name="home"
+    ),
 
     path(
         "register/",
